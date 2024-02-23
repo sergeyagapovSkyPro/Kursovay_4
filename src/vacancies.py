@@ -7,6 +7,8 @@ class Vacancies:
     def name(self):
         return self.__name
 
+
+    @property
     def page(self):
         return self.__page
 

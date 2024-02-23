@@ -11,6 +11,10 @@ class SortedVacancies:
 
     @property
     def sorted_vacancies(self):
+        """
+        Получем список вакансий из файла и сортируем его
+        :return list
+        """
         with open(FILE, encoding="utf-8") as file:
             content = json.load(file)
         for i in content["items"]:
@@ -24,8 +28,8 @@ class SortedVacancies:
             self.head_hunter_sorted.append({
                 "name": i["name"],
                 "city": i["area"]["name"],
-                "payment_1": i["salary"]["from"],
-                "payment_2": i["salary"]["to"],
+                "payment_from": i["salary"]["from"],
+                "payment_to": i["salary"]["to"],
                 "skill_1": i["snippet"]["requirement"],
                 "skill_2": i["snippet"]["responsibility"],
                 "data": self.date_format
